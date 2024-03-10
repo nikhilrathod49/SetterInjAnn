@@ -1,0 +1,18 @@
+<!-- bean-factory-demo.xml -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+     <!-- Define StudentDetails bean -->
+    <bean id="studentDetails" class="com.spring.student.StudentDetails">
+        <property name="name" value="Nikhil R"/>  
+        <property name="age" value="20"/>  
+    </bean>
+    
+    <!-- Define StudentService bean with dependency injection -->
+    <bean id="studentService" class="com.spring.student.StudentService">
+        <property name="studentDetails" ref="studentDetails"/>
+    </bean>
+
+</beans>
